@@ -39,7 +39,10 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	 * @return void
 	 */
 	public function displaySingleMapAction() {
-
+		$GLOBALS['TSFE']->additionalHeaderData['we_map'] =
+			'<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.11&key=AIzaSyC9KsfOS_MiHeJiNeD2ZOPouQTQEiIySrM&sensor=true"></script>' .
+			'<script type="text/javascript" src="/typo3conf/ext/we_map/Resources/Public/JS/infobox.js"></script>';
+		
 	}
 
 	/**

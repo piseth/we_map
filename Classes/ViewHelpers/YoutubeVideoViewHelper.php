@@ -17,7 +17,7 @@
  * = Examples =
  *
  * <code title="Example">
- * <f:base />
+ *<we:youtubeVideo width="420" height="345" src="http://www.youtube.com/v/yourid" />
  * </code>
  * <output>
  * <embed width="420" height="345" src="http://www.youtube.com/v/yourid" type="application/x-shockwave-flash"></embed>
@@ -37,7 +37,7 @@ class Tx_WeMap_ViewHelpers_YoutubeVideoViewHelper extends \TYPO3\CMS\Fluid\Core\
 		$this->registerArgument('height', 'string', 'height of video');
 	}
 	/**
-	 * Render the "Base" tag by outputting $request->getBaseUri()
+	 * Render the youtube html
 	 *
 	 *
 	 * @return html video embeded html.
