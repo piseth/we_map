@@ -1,0 +1,14 @@
+plugin.tx_wemap {
+	view {
+		# cat=plugin.tx_wemap/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:we_map/Resources/Private/Templates/
+		# cat=plugin.tx_wemap/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:we_map/Resources/Private/Partials/
+		# cat=plugin.tx_wemap/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:we_map/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_wemap//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

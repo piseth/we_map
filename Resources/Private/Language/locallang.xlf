@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-09-30T11:06:49Z" product-name="we_map">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_wemap_domain_model_map">
+				<source>Map</source>
+			</trans-unit>
+			<trans-unit id="tx_wemap_domain_model_map.name">
+				<source>name</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>
