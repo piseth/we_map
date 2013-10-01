@@ -3,9 +3,10 @@
 <f:section name="main">
 <div id="map_canvas" style="width: 100%; height: 400px"></div>
 <script type="text/javascript">
-	var initLat = 23.800090;
-	var initLon = 28.828125;
-	var initZoom = 2;
+	var initLat = 11.539424;
+
+	var initLon = 104.921803;
+	var initZoom = 13;
 
 	function initializeWorldMap() {
 		var centerLatLng = new google.maps.LatLng(initLat, initLon);
@@ -14,12 +15,12 @@
 			draggable: true,
 			disableDefaultUI: false,
 			center: centerLatLng,
-			scrollwheel: false,
+			scrollwheel: true,
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			zoomControlOptions: {
 				style:google.maps.ZoomControlStyle.LARGE
 			},
-			mapTypeControl: false
+			mapTypeControl: true
 		};
 
 		var maps = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
@@ -27,8 +28,8 @@
 		var marker = new google.maps.Marker({
 			map: maps,
 			icon: 'http://maps.google.com/mapfiles/marker.png',
-			draggable: true,
-			position: new google.maps.LatLng(49.47216, -123.76307),
+			draggable: false,
+			position: new google.maps.LatLng(initLat, initLon),
 			visible: true
 		});
 
@@ -51,70 +52,22 @@
 			};
 		var infoBox = new InfoBox(myOptions);
 
-		infoBox.setContent('');
-		maps.setZoom(4);
+
 		var boxText = document.createElement("div");
 		boxText.style.cssText = "height:150px;width:200px; margin-top: 8px; background: white; padding: 5px; position: relative;";
-		boxText.innerHTML = "<span class='flag'></span>" + "this is address. this is address. this is address. this is address. this is address. this is address. this is address. this is address. this is address. this is address. this is address. this is address. this is address. this is address. this is address. this is address. this is address. this is address. this is address. ";
+		boxText.innerHTML = "<span class='flag'></span>" + "Web Essentials<br>Redefining Web Development<br><br><br>#86, street 99 <br>Phnom Penh, 855 <br>CAMBODIA";
 		infoBox.setContent(boxText);
 
 		google.maps.event.addListener(marker, "click", function (e) {
 			infoBox.open(maps, this);
+			//if () {
+
+			//}
 		});
 		infoBox.open(maps, marker);
 	}
 	initializeWorldMap();
 
-	/*function initialize() {
-		var secheltLoc = new google.maps.LatLng(49.47216, -123.76307);
-
-		var myMapOptions = {
-			 zoom: 15
-			,center: secheltLoc
-			,mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-		var theMap = new google.maps.Map(document.getElementById("map_canvas"), myMapOptions);
-
-
-		var marker = new google.maps.Marker({
-			map: theMap,
-			draggable: true,
-			position: new google.maps.LatLng(49.47216, -123.76307),
-			visible: true
-		});
-
-		var boxText = document.createElement("div");
-		boxText.style.cssText = "border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px;";
-		boxText.innerHTML = "City Hall, Sechelt<br>British Columbia<br>Canada";
-
-		var myOptions = {
-			 content: boxText
-			,disableAutoPan: false
-			,maxWidth: 0
-			,pixelOffset: new google.maps.Size(-140, 0)
-			,zIndex: null
-			,boxStyle: {
-			  background: "url('tipbox.gif') no-repeat"
-			  ,opacity: 0.75
-			  ,width: "280px"
-			 }
-			,closeBoxMargin: "10px 2px 2px 2px"
-			,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
-			,infoBoxClearance: new google.maps.Size(1, 1)
-			,isHidden: false
-			,pane: "floatPane"
-			,enableEventPropagation: false
-		};
-
-		google.maps.event.addListener(marker, "click", function (e) {
-			ib.open(theMap, this);
-		});
-
-		var ib = new InfoBox(myOptions);
-
-		ib.open(theMap, marker);
-	}
-	initialize();*/
 </script>
 <we:googleMap length="50" />
 </f:section>

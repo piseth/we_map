@@ -25,6 +25,43 @@
 							</config>
 						</TCEforms>
 					</switchableControllerActions>
+
+					<settings.videoWidth>
+						<TCEforms>
+							<label>Video width</label>
+							<config>
+								<type>input</type>
+								<size>3</size>
+								<eval>int</eval>
+								<default>420</default>
+							</config>
+						</TCEforms>
+					</settings.videoWidth>
+
+					<settings.videoHeight>
+						<TCEforms>
+							<label>Video height</label>
+							<config>
+								<type>input</type>
+								<size>3</size>
+								<eval>int</eval>
+								<default>345</default>
+							</config>
+						</TCEforms>
+					</settings.videoHeight>
+
+					<settings.videoSource>
+						<TCEforms>
+							<label>Video source</label>
+							<config>
+								<type>input</type>
+								<size>100</size>
+								<max>200</max>
+								<eval>trim</eval>
+								<default>http://www.youtube.com/v/CLIPLiQDIk0</default>
+							</config>
+						</TCEforms>
+					</settings.videoSource>
 				</el>
 			</ROOT>
 		</sDEF>
