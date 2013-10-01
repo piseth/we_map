@@ -1,0 +1,63 @@
+<div id="we_map_canvas" style="width: {width}px; height: {height}px"></div>
+<script type="text/javascript">
+	var initLat = '{latitude}';
+	var content = '{content}';
+	var initLon = '{longitude}';
+	var initZoom = 13;
+	function initializeWorldMap() {
+		var centerLatLng = new google.maps.LatLng(initLat, initLon);
+		var myOptions = {
+			zoom: initZoom,
+			draggable: true,
+			disableDefaultUI: false,
+			center: centerLatLng,
+			scrollwheel: true,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			zoomControlOptions: {
+				style:google.maps.ZoomControlStyle.LARGE
+			},
+			mapTypeControl: true
+		};
+
+		var maps = new google.maps.Map(document.getElementById("we_map_canvas"), myOptions);
+
+		var marker = new google.maps.Marker({
+			map: maps,
+			icon: 'http://maps.google.com/mapfiles/marker.png',
+			draggable: false,
+			position: new google.maps.LatLng(initLat, initLon),
+			visible: true
+		});
+
+		var myOptions = {
+				disableAutoPan: false
+				,maxWidth: 0
+				// set the position of map
+				,pixelOffset: new google.maps.Size(-100,-202)
+				,zIndex: null
+				,boxStyle: {
+					opacity: 1
+				}
+				,closeBoxMargin: "11px 27px -10px 0px"
+				//,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
+				,closeBoxURL: ""
+				,infoBoxClearance: new google.maps.Size(1, 1)
+				,isHidden: false
+				,pane: "floatPane"
+				,enableEventPropagation: false
+			};
+		var infoBox = new InfoBox(myOptions);
+
+
+		var boxText = document.createElement("div");
+		boxText.style.cssText = "height:150px;width:200px; margin-top: 8px; background: white; padding: 5px; position: relative;";
+		boxText.innerHTML = "<span class='flag'></span>" + content;
+		infoBox.setContent(boxText);
+
+		google.maps.event.addListener(marker, "click", function (e) {
+			infoBox.open(maps, this);
+		});
+		infoBox.open(maps, marker);
+	}
+	initializeWorldMap();
+</script>

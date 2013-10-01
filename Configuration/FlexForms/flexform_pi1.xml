@@ -10,6 +10,7 @@
 					<switchableControllerActions>
 						<TCEforms>
 							<label>Select function</label>
+							<onChange>reload</onChange>
 							<config>
 								<type>select</type>
 								<items>
@@ -29,6 +30,7 @@
 					<settings.videoWidth>
 						<TCEforms>
 							<label>Video width</label>
+							<displayCond>FIELD:switchableControllerActions:=:Map->displayYoutube</displayCond>
 							<config>
 								<type>input</type>
 								<size>3</size>
@@ -41,6 +43,7 @@
 					<settings.videoHeight>
 						<TCEforms>
 							<label>Video height</label>
+							<displayCond>FIELD:switchableControllerActions:=:Map->displayYoutube</displayCond>
 							<config>
 								<type>input</type>
 								<size>3</size>
@@ -53,6 +56,7 @@
 					<settings.videoSource>
 						<TCEforms>
 							<label>Video source</label>
+							<displayCond>FIELD:switchableControllerActions:=:Map->displayYoutube</displayCond>
 							<config>
 								<type>input</type>
 								<size>100</size>
@@ -62,6 +66,74 @@
 							</config>
 						</TCEforms>
 					</settings.videoSource>
+
+					<settings.latitude>
+						<TCEforms>
+							<label>Map latitude</label>
+							<displayCond>FIELD:switchableControllerActions:=:Map->displaySingleMap</displayCond>
+							<config>
+								<type>input</type>
+								<size>10</size>
+								<eval>trim</eval>
+								<default>11.539424</default>
+							</config>
+						</TCEforms>
+					</settings.latitude>
+
+					<settings.longitude>
+						<TCEforms>
+							<label>Map longitude</label>
+							<displayCond>FIELD:switchableControllerActions:=:Map->displaySingleMap</displayCond>
+							<config>
+								<type>input</type>
+								<size>10</size>
+								<eval>trim</eval>
+								<default>104.921803</default>
+							</config>
+						</TCEforms>
+					</settings.longitude>
+					<settings.content>
+						<TCEforms>
+							<label>Map content</label>
+							<displayCond>FIELD:switchableControllerActions:=:Map->displaySingleMap</displayCond>
+							<config>
+								<type>text</type>
+								<cols>40</cols>
+								<rows>10</rows>
+								<wrap>virtual</wrap>
+								<default></default>
+							</config>
+							<defaultExtras>
+								richtext[*]:rte_transform[mode=ts_css]
+							</defaultExtras>
+						</TCEforms>
+					</settings.content>
+					<settings.width>
+						<TCEforms>
+							<label>Map width</label>
+							<displayCond>FIELD:switchableControllerActions:=:Map->displaySingleMap</displayCond>
+							<config>
+								<type>input</type>
+								<size>3</size>
+								<eval>int</eval>
+								<default>800</default>
+							</config>
+						</TCEforms>
+					</settings.width>
+
+					<settings.height>
+						<TCEforms>
+							<label>Map height</label>
+							<displayCond>FIELD:switchableControllerActions:=:Map->displaySingleMap</displayCond>
+							<config>
+								<type>input</type>
+								<size>3</size>
+								<eval>int</eval>
+								<default>400</default>
+							</config>
+						</TCEforms>
+					</settings.height>
+					
 				</el>
 			</ROOT>
 		</sDEF>
